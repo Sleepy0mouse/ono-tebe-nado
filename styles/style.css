@@ -1,22 +1,9 @@
-.cover::before,
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0 0 0 / 0.6);
-}
-
 .header {
   display: grid;
-  grid-template-columns: 597px auto 240px;
+  grid-template-columns: 1fr min-content 1fr;
   align-items: center;
   max-width: 1340px;
-  margin-top: 92px;
-  margin-bottom: 92px;
+  margin: 92px auto;
   color: #000;
   font-weight: 400;
   font-size: 18px;
@@ -47,6 +34,11 @@
 .header_logo-image {
   width: 148px;
   height: 105px;
+}
+
+.header_adress {
+  display: flex;
+  justify-content: end;
 }
 
 .adress {
@@ -81,7 +73,7 @@
   font-size: 100px;
   font-style: normal;
   line-height: 115%;
-  letter-spacing: 1.875rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
 }
 
@@ -98,7 +90,7 @@
 }
 
 .letter-spacing-extended {
-  letter-spacing: 3.75rem;
+  letter-spacing: 0.6em;
 }
 
 .no-letter-spacing {
@@ -108,7 +100,7 @@
 .cover__description {
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 257px;
+  grid-template-columns: 1fr min-content;
   align-items: center;
   gap: 78px;
   margin-top: 125px;
@@ -118,12 +110,13 @@
 }
 
 .cover__description-text {
-  justify-self: end;
+  display: flex;
+  justify-content: end;
   font-weight: 400;
   font-size: 22px;
   font-style: normal;
   line-height: 127.273%;
-  word-spacing: 17px;
+  word-spacing: 18px;
 }
 
 .bet-button {
@@ -138,6 +131,17 @@
   text-align: center;
   text-transform: uppercase;
   background-color: transparent;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6000000238418579;
+  background-color: black;
 }
 
 .lots {
@@ -200,6 +204,7 @@
 }
 
 .card__title {
+  z-index: 2;
   font-weight: 700;
   font-size: 22px;
   font-style: normal;
@@ -211,6 +216,7 @@
 }
 
 .card__text {
+  z-index: 2;
   font-weight: 400;
   font-size: 20px;
   font-style: normal;
@@ -231,6 +237,7 @@
 
 .about {
   display: grid;
+  margin: auto;
   grid-template-columns: 430px 1fr;
   column-gap: 25px;
   max-width: 1340px;
@@ -271,17 +278,19 @@
   color: #000;
   font-weight: 400;
   font-size: 20px;
+  padding-bottom: 25px;
   font-style: normal;
   line-height: normal;
 }
 
 .about_text:last-child {
-  padding-top: 25px;
+  padding-bottom: 0;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
+  margin: auto;
   max-width: 1340px;
   margin-top: 180px;
   font-size: 18px;
